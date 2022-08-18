@@ -23,6 +23,7 @@ export class SharedService {
   updateDepartment(val:any){
     return this.http.put(this.APIUrl + '/department/',val)
   }
+
   deleteDepartment(val:any){
     return this.http.delete(this.APIUrl + '/department/',val)
   }
@@ -39,7 +40,16 @@ export class SharedService {
   updateEmployee(val:any){
     return this.http.put(this.APIUrl + '/employee/',val)
   }
+
   deleteEmployee(val:any){
     return this.http.delete(this.APIUrl + '/employee/',val)
+  }
+
+  UploadPhoto(val:any){
+    return this.http.post(this.APIUrl + '/SaveFile', val)
+  }
+
+  getAllDepNames():Observable<any[]>{
+    return this.http.get<any[]>(this.APIUrl + '/department/')
   }
 }
