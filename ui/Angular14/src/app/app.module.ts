@@ -14,6 +14,11 @@ import { SharedService } from './shared.service';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatTableModule} from '@angular/material/table';
+import { DataTableComponent } from './data-table/data-table.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+
 
 @NgModule({
   declarations: [
@@ -24,14 +29,18 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     EmployeeComponent,
     ShowEmpComponent,
     AddEditEmpComponent,
+    DataTableComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MatTableModule,
     MatToolbarModule,
     ReactiveFormsModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]
