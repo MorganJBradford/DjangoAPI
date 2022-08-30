@@ -4,15 +4,15 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 
-import { DataTableComponent } from './data-table.component';
+import { ShowDepTableComponent } from './show-dep-table.component';
 
-describe('DataTableComponent', () => {
-  let component: DataTableComponent;
-  let fixture: ComponentFixture<DataTableComponent>;
+describe('ShowDepTableComponent', () => {
+  let component: ShowDepTableComponent;
+  let fixture: ComponentFixture<ShowDepTableComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ DataTableComponent ],
+      declarations: [ ShowDepTableComponent ],
       imports: [
         NoopAnimationsModule,
         MatPaginatorModule,
@@ -23,7 +23,7 @@ describe('DataTableComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DataTableComponent);
+    fixture = TestBed.createComponent(ShowDepTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

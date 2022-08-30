@@ -2,24 +2,24 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
-import { DataTableDataSource, DataTableItem } from './data-table-datasource';
+import { ShowDepTableDataSource, ShowDepTableItem } from './show-dep-table-datasource';
 
 @Component({
-  selector: 'data-table',
-  templateUrl: './data-table.component.html',
-  styleUrls: ['./data-table.component.css']
+  selector: 'app-show-dep-table',
+  templateUrl: './show-dep-table.component.html',
+  styleUrls: ['./show-dep-table.component.css']
 })
-export class DataTableComponent implements AfterViewInit {
+export class ShowDepTableComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatTable) table!: MatTable<DataTableItem>;
-  dataSource: DataTableDataSource;
+  @ViewChild(MatTable) table!: MatTable<ShowDepTableItem>;
+  dataSource: ShowDepTableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['id', 'name'];
 
   constructor() {
-    this.dataSource = new DataTableDataSource();
+    this.dataSource = new ShowDepTableDataSource();
   }
 
   ngAfterViewInit(): void {
