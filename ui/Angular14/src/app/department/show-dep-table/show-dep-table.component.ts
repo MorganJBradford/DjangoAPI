@@ -15,7 +15,11 @@ import { SharedService } from 'src/app/shared.service';
   styleUrls: ['./show-dep-table.component.css']
 })
 export class ShowDepTableComponent implements OnInit, OnDestroy {
-  
+
+  constructor(private service: SharedService, public dialog: MatDialog) { }
+
+  dep: Department = {} as Department;
+
   private subs = new Subscription();
   
   displayedColumns: string[] = ['DepartmentId','DepartmentName', 'Options'];
@@ -24,10 +28,19 @@ export class ShowDepTableComponent implements OnInit, OnDestroy {
 
   private dataArray: any;
 
-  constructor(private service: SharedService, public dialog: MatDialog) { }
-
-  openDialog(): void {
-    this.dialog.open(AddEditDepComponent)
+  addDepartment(){
+    this.dep={
+      DepartmentId: 0,
+      DepartmentName: "",
+    }
+    this.dialog.open(AddEditDepComponent, {data: {ModalTitle: "Add Department"}});
+  }
+  editDepartment(){
+    this.dep={
+      DepartmentId: 0,
+      DepartmentName: "",
+    }
+    this.dialog.open(AddEditDepComponent, {data: {ModalTitle: "Edit Department"}});
   }
 
   getDepartments(): void {

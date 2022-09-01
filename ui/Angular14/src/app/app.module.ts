@@ -27,6 +27,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     EmployeeComponent,
     ShowEmpComponent,
     AddEditEmpComponent,
+    AddEditDepComponent,
     ShowDepTableComponent,
   ],
   entryComponents: [AddEditDepComponent],
