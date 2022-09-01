@@ -27,10 +27,8 @@ export class ShowDepTableComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subs.add(this.service.getDepList()
       .subscribe((res) => {
-        console.log(res);
         this.dataArray = res;
         this.dataSource = new MatTableDataSource<Department>(this.dataArray);
-        console.log(this.dataSource)
       },
         (err: HttpErrorResponse) => {
           console.log(err);
