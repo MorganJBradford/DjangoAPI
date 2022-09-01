@@ -1,3 +1,5 @@
+import { AddEditDepComponent } from './../add-edit-dep/add-edit-dep.component';
+import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { MatSort} from '@angular/material/sort';
@@ -22,7 +24,11 @@ export class ShowDepTableComponent implements OnInit, OnDestroy {
 
   private dataArray: any;
 
-  constructor(private service: SharedService) { }
+  constructor(private service: SharedService, public dialog: MatDialog) { }
+
+  openDialog(): void {
+    this.dialog.open(AddEditDepComponent)
+  }
 
   getDepartments(): void {
     this.subs.add(this.service.getDepList()
