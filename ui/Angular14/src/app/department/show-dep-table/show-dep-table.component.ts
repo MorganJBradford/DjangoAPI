@@ -16,7 +16,7 @@ export class ShowDepTableComponent implements OnInit, OnDestroy {
   
   private subs = new Subscription();
   
-  displayedColumns: string[] = ['DepartmentId','DepartmentName'];
+  displayedColumns: string[] = ['DepartmentId','DepartmentName', 'Options'];
   public dataSource: MatTableDataSource<Department> = {} as MatTableDataSource<Department>;
 
 
