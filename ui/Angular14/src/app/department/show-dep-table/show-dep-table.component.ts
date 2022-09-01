@@ -24,15 +24,16 @@ export class ShowDepTableComponent implements OnInit, OnDestroy {
 
   constructor(private service: SharedService) { }
 
-  ngOnInit() {
+  getDepartments(): void {
     this.subs.add(this.service.getDepList()
       .subscribe((res) => {
         this.dataArray = res;
         this.dataSource = new MatTableDataSource<Department>(this.dataArray);
-      },
-        (err: HttpErrorResponse) => {
-          console.log(err);
-        }));
+      }));
+  }
+
+  ngOnInit() {
+    this.getDepartments();
   }
 
   ngOnDestroy() {
