@@ -1,7 +1,25 @@
 <h2 mat-dialog-title >{{ModalTitle}}</h2>
-<mat-dialog-content class="mat-typography" id="add-edit-modal">
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Submit</button>
-</mat-dialog-actions>
+<ng-container *ngIf="DepartmentId === 0">
+  <mat-dialog-content class="mat-typography" id="add-edit-modal">
+    <form name="add" onsubmit="addDepartment()">
+      <input type="text" placeholder="Department Name" [(ngModel)]="DepartmentName"/>
+    </form>
+      
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close>Cancel</button>
+        <button mat-button [mat-dialog-close]="true" type="submit" name="add" cdkFocusInitial onsubmit="addDepartment()">Add</button>
+    </mat-dialog-actions>
+</ng-container>
+<ng-container *ngIf="DepartmentId !== 0">
+  <mat-dialog-content class="mat-typography" id="add-edit-modal">
+    <form name="add" onsubmit="addDepartment()">
+      <input type="text" placeholder="Department Name" [(ngModel)]="DepartmentName"/>
+    </form>
+      
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close>Cancel</button>
+        <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Submit</button>
+    </mat-dialog-actions>
+</ng-container>

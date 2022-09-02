@@ -33,14 +33,11 @@ export class ShowDepTableComponent implements OnInit, OnDestroy {
       DepartmentId: 0,
       DepartmentName: "",
     }
-    this.dialog.open(AddEditDepComponent, {data: {ModalTitle: "Add Department"}});
+    this.dialog.open(AddEditDepComponent, {data: {ModalTitle: "Add Department", condition: 'add'}});
   }
-  editDepartment(){
-    this.dep={
-      DepartmentId: 0,
-      DepartmentName: "",
-    }
-    this.dialog.open(AddEditDepComponent, {data: {ModalTitle: "Edit Department"}});
+  editDepartment(dep: Department){
+    this.dep=dep;
+    this.dialog.open(AddEditDepComponent, {data: {ModalTitle: "Edit Department", dep: dep}});
   }
 
   getDepartments(): void {
