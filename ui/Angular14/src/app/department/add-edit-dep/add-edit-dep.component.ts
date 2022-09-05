@@ -10,8 +10,8 @@ import { Inject } from '@angular/core'
 })
 export class AddEditDepComponent implements OnInit {
   ModalTitle: string = this.data.ModalTitle;
-  DepartmentId: number = 0;
-  DepartmentName: string = '';
+  DepartmentId?: number = 0;
+  DepartmentName?: string = '';
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -19,7 +19,7 @@ export class AddEditDepComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    if (this.data.dep.DepartmentId) {
+    if (this.data.dep) {
       this.DepartmentId = this.data.dep.DepartmentId;
       this.DepartmentName = this.data.dep.DepartmentName;
     } 
